@@ -1,100 +1,243 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <title>Collaborateur</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  </head>
-    
+<head>
+  <title>Collaborateur</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+</head>
+
 
 <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Collaborateur</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Statistique</a>
-      </li>
-            <li class="nav-item">
-        <a class="nav-link" href="#">Activités</a>
-      </li>
-    </ul>
-
-  </div>
-</nav>
-
-	<h1>Nouveau Collaborateur</h1>
-	<a href="./ListerCollaborateur.html"> << Retour à la liste</a><br /><br />
-<form>
-  
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label >Nom</label>
-      <input type="text" class="form-control"  name="nom" placeholder="Nom"  required>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label >Prénom</label>
-      <input type="text" class="form-control"  name="prenom" placeholder="Prenom"  required>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label >Date de naissance</label>
-      <input type="date" class="form-control"  name="date2naissance" required>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label >Commune</label>
-      <input type="text" class="form-control" name="commune"  placeholder="Commune" required>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label >Région</label>
-      <input type="text" class="form-control"  name="region" placeholder="region" required>
-     </div>
-    <div class="col-md-3 mb-3">
-      <label >Code postal</label>
-      <input type="text" class="form-control" name="codePostal" placeholder="code postal" required>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Collaborateur</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Statistique</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Activités</a>
+        </li>
+      </ul>
 
     </div>
-  </div>
+  </nav>
 
-  <button class="btn btn-primary" type="submit" onclick="add(event);">Ajouter</button>
- </form>
-  <SCRIPT LANGUAGE="javascript">
+  <h1>Nouveau Collaborateur</h1>
+  <a href="./list.html">
+    << Retour à la liste</a>
+      <br />
+      <br />
+      <form>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label>Nom</label>
+            <input type="text" class="form-control" name="nom" placeholder="Nom" />
+            <div class="invalid-feedback">
+              Le nom est obligatoire.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Prénom</label>
+            <input type="text" class="form-control" name="prenom" placeholder="Prenom" />
+            <div class="invalid-feedback">
+              Le prénom est obligatoire.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Date de naissance</label>
+            <input type="date" class="form-control" name="date2naissance" />
+            <div class="invalid-feedback">
+              La date de naissance est obligatoire.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Numéro de sécurité sociale</label>
+            <input type="number" class="form-control" name="num2secu" />
+            <div class="invalid-feedback">
+              Le numéro de sécurité sociale est obligatoire.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label>Commune</label>
+            <input type="text" class="form-control" name="commune" placeholder="Commune" />
+          </div>
+          <div class="col-md-3 mb-3">
+            <label>Région</label>
+            <input type="text" class="form-control" name="region" placeholder="region" />
+          </div>
+          <div class="col-md-3 mb-3">
+            <label>Code postal</label>
+            <input type="text" class="form-control" name="codePostal" placeholder="code postal" />
+
+          </div>
+        </div>
+
+        <button class="btn btn-primary" data-toggle="modal" type="submit" onclick="add(event);">Ajouter</button>
+      </form>
+
+      <div class="modal" id="modal-dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <a class="close" aria-hidden="true" href="#" data-dismiss="modal">×</a>
+              <h3>Création d'un collaborateur</h3>
+            </div>
+            <div class="modal-body">
+              <p>Vous êtes sur le point de creer un nouveau collaborateur : </p>
+              <label id="left">Nom</label>
+              <label id="right" name="nomConfirmation">
+
+              </label>
+              <label id="left">Prénom</label>
+              <label id="right" name="prenomConfirmation">
+
+              </label>
+              <label id="left">Date de naissance</label>
+              <label id="right" name="date2naissanceConfirmation">
+              </label>
+              <label id="left">Adresse</label>
+              <label id="right" name="adresseConfirmation">
+
+              </label>
+              <label id="left">Numéro de sécurité sociale</label>
+              <label id="right" name="num2secuConfirmation">
+
+              </label>
+            </div>
+            <div class="modal-footer">
+              <a class="btn confirm" id="btnYes" href="#">Confirmer</a>
+              <a class="btn secondary" aria-hidden="true" href="#" data-dismiss="modal">Annuler</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-      function add(event) {
-        event.preventDefault();
-        var lastName = document.getElementsByName("nom")[0].value;
-       var firstName = document.getElementsByName("prenom")[0].value;
-        var birthday = document.getElementsByName("date")[0].value;
-        var adress =document.getElementsByName("adresse")[0].value;
-
-        var collaborateur = {
-                        'lastname' : lastName,
-                        'firstname' : firstName,
-                        'age' : birthday,
-                        'adress' : adress
-                    };
-        localStorage.setItem('collaborateur'+localStorage.length, JSON.stringify(collaborateur));
-
-        alert("Collaborateur bien ajouté ! " + JSON.stringify(collaborateur));
-      }
-
-      
-    </SCRIPT>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+      <script>
+                         $('#modal-dialog').on('show', function () {
+                           var link = $(this).data('link'),
+                             confirmBtn = $(this).find('.confirm');
+
+                           $("[name='nom']").value = "coucou";
+                           alert("coucou");
+                         })
+
+
+                         $('#btnYes').click(function () {
+
+                           var lastName = document.getElementsByName("nom")[0].value;
+                           var firstName = document.getElementsByName("prenom")[0].value;
+                           var birthday = document.getElementsByName("date2naissance")[0].value;
+                           var adress = document.getElementsByName("commune")[0].value;
+
+                           var collaborateur = {
+                             'lastname': lastName,
+                             'firstname': firstName,
+                             'age': birthday,
+                             'adress': adress
+                           };
+                           localStorage.setItem('collaborateur' + localStorage.length, JSON.stringify(collaborateur));
+
+                           alert("Collaborateur bien ajouté ! " + JSON.stringify(collaborateur));
+
+
+                           alert('submit form');
+                           $('form').submit();
+
+                         });
+      </script>
+
+
+      <SCRIPT LANGUAGE="javascript">
+
+
+        function add(event) {
+          event.preventDefault();
+
+          var toutEstRempli = true;
+
+          if ($("[name='nom']").val().length > 0) {
+            jQuery("[name='nom']").removeClass();
+            jQuery("[name='nom']").addClass("form-control is-valid");
+          } else {
+            jQuery("[name='nom']").removeClass();
+            jQuery("[name='nom']").addClass("form-control is-invalid");
+            toutEstRempli = false;
+          }
+
+          if ($("[name='prenom']").val().length > 0) {
+            jQuery("[name='prenom']").removeClass();
+            jQuery("[name='prenom']").addClass("form-control is-valid");
+          } else {
+            jQuery("[name='prenom']").removeClass();
+            jQuery("[name='prenom']").addClass("form-control is-invalid");
+            toutEstRempli = false;
+          }
+
+          if ($("[name='date2naissance']").val().length > 0) {
+            jQuery("[name='date2naissance']").removeClass();
+            jQuery("[name='date2naissance']").addClass("form-control is-valid");
+          } else {
+            jQuery("[name='date2naissance']").removeClass();
+            jQuery("[name='date2naissance']").addClass("form-control is-invalid");
+            toutEstRempli = false;
+
+          }
+          if ($("[name='commune']").val().length > 0) {
+            jQuery("[name='commune']").removeClass();
+            jQuery("[name='commune']").addClass("form-control is-valid");
+          } else {
+            jQuery("[name='commune']").removeClass();
+            jQuery("[name='commune']").addClass("form-control is-invalid");
+            toutEstRempli = false;
+
+          }
+          if (toutEstRempli) {
+            $("#modal-dialog").modal(); // confirmation
+
+            var lastName = document.getElementsByName("nom")[0].value;
+            var firstName = document.getElementsByName("prenom")[0].value;
+            var birthday = document.getElementsByName("date2naissance")[0].value;
+            var adress = document.getElementsByName("commune")[0].value;
+
+            
+            jQuery( "[name='nomConfirmation']" ).text(lastName);
+            jQuery( "[name='prenomConfirmation']" ).text(firstName);
+            jQuery( "[name='date2naissanceConfirmation']" ).text(birthday);
+            jQuery( "[name='adresseConfirmation']" ).text(adress);
+          }
+        }
+
+
+
+      </SCRIPT>
+
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

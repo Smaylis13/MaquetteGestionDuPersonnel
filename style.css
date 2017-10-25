@@ -23,3 +23,11 @@ input[type="submit"]{
     margin-left: 200px;
 
 }
+#left{
+    display: block;
+}
+
+#right{
+    display: block;
+    margin-left: 300px;
+}
